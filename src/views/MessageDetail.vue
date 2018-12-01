@@ -52,7 +52,7 @@ export default {
         }
       ]
       this.allMessageArr = allMessageArr // 初始化显示
-      const id = this.$route.params.id * 1
+      const id = this.$route.params.id * 1 // $route代表当前路由,里面存数据
       this.messageDetail = allMessageArr.find(detail => detail.id === id)
     }, 1000)
   },

@@ -5,8 +5,11 @@
           {{message.image}}
         <a href="#">{{message.title}}</a>
         <router-link :to="'/home/message/detail/'+message.id">{{message.image}}</router-link>
+        <button @click="pushShow(message.id)">push查看</button>
+        <button @click="replaceShow(message.id)">replace查看</button>
       </li>
     </ul>
+    <button @click="$router.back()">返回</button>
     <hr>
     <router-view></router-view>
   </div>
@@ -51,6 +54,14 @@ export default {
       ]
       this.messageArr = messageArr
     }, 1000)
+  },
+  methods: {
+    pushShow (id) { // push回退到的是上一步
+      this.$router.push('/home/message/detail/' + id)
+    },
+    replaceShow (id) { // replace回退到上一次进来的tab
+      this.$router.replace('/home/message/detail/' + id) // $router代表当前路由器,里面存路由的功能和方法,操作路由的方法
+    }
   }
 }
 </script>
