@@ -9,6 +9,7 @@ import Home from '../views/Home'
 import About from '../views/About'
 import News from '../views/News'
 import Message from '../views/Message'
+import MessageDetail from '../views/MessageDetail'
 
 Vue.use(VueRouter) // 使用路由
 
@@ -26,7 +27,13 @@ export default new VueRouter({ // 路由器模块向外暴露路由器对象; �
         },
         {
           path: 'message', // path路径不加 / 代表,父路径下的
-          component: Message
+          component: Message,
+          children: [
+            {
+              path: '/home/message/detail/:id',
+              component: MessageDetail
+            }
+          ]
         },
         {
           path: '',

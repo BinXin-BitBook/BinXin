@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(news, index) in newArr" :key="index">{{news}}}</li>
+      <li v-for="(news, index) in newArr" :key="index">{{news}}</li>
     </ul>
   </div>
 </template>

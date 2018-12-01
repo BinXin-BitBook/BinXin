@@ -4,8 +4,11 @@
       <li v-for="message in messageArr" :key="message.id">
           {{message.image}}
         <a href="#">{{message.title}}</a>
+        <router-link :to="'/home/message/detail/'+message.id">{{message.image}}</router-link>
       </li>
     </ul>
+    <hr>
+    <router-view></router-view>
   </div>
 </template>
 <script>
